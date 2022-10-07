@@ -1,0 +1,39 @@
+Pseudocode for sort_alternate (Left to Right Algorithm):
+
+sorted_disks left_to_right {
+    numOfSwap = 0
+    for (size i = 0; i < dark_count; i++) 
+     for (size j = 0; j < (total - 1); j++)
+            if(j is DISK_DARK and j + 1 is DISK_LIGHT)
+                swap j
+                numOfSwap++
+            end if
+        end for
+    end for
+}
+
+Pseudocode for Lawnmower algorithm (Left to right, right to left):
+
+sorted_disks lawnmower {
+    numOfSwap = 0
+    boolean direction = TRUE
+    for (size i = 0; i < dark_count; i++)
+        if (direction == TRUE)
+            for (size j = 0; j < (total - 1); j++)
+                if(j is DISK_DARK and j + 1 is DISK_LIGHT)
+                    swap j
+                    numOfSwap++
+                end if
+            end for
+        else
+            for (size j = (total - 1); j > 0; j--)
+                if(j is DISK_LIGHT and j - 1 is DISK_DARK)
+                    swap j
+                    numOfSwap++
+                end if
+            end for
+        end if
+        direction = TRUE
+   end for
+}
+
